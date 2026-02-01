@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Home - R&S Ali Construction Ltd.</title>
+  <!-- Swap stylesheet to modern.css -->
   <link rel="stylesheet" href="modern.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script>
@@ -17,19 +18,6 @@
       document.getElementById('overlay').classList.remove('show');
     }
   </script>
-  <style>
-    .services-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-    }
-    .service-icon {
-      flex: 1 1 20%;
-      min-width: 120px;
-      text-align: center;
-    }
-  </style>
 </head>
 <body>
   <!-- Topbar -->
@@ -60,7 +48,7 @@
   <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
 
   <!-- Hero -->
-  <section class="hero" style="background: url('images/project-house1.jpeg') center/cover no-repeat;">
+  <section class="hero">
     <h1>R&S Ali Construction Ltd.</h1>
     <p>Building Excellence Since 2014 - A Passion for Performance</p>
     <div class="hero-buttons">
@@ -127,24 +115,26 @@
       <p>&copy; 2025 R&S Ali Construction Ltd. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- Scroll Animation Script -->
   <script>
-  // Reveal sections on scroll
-  const sections = document.querySelectorAll("main section, .services-highlight");
+    const sections = document.querySelectorAll("main section, .services-highlight");
 
-  const revealOnScroll = () => {
-    const triggerBottom = window.innerHeight * 0.85;
-    sections.forEach(section => {
-      const boxTop = section.getBoundingClientRect().top;
-      if (boxTop < triggerBottom) {
-        section.classList.add("show");
-      } else {
-        section.classList.remove("show");
-      }
-    });
-  };
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach((section, index) => {
+        const boxTop = section.getBoundingClientRect().top;
+        if (boxTop < triggerBottom) {
+          // staggered delay
+          setTimeout(() => section.classList.add("show"), index * 150);
+        } else {
+          section.classList.remove("show");
+        }
+      });
+    };
 
-  window.addEventListener("scroll", revealOnScroll);
-  window.addEventListener("load", revealOnScroll);
-</script>
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", revealOnScroll);
+  </script>
 </body>
 </html>
