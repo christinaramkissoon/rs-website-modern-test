@@ -5,18 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Home - R&S Ali Construction Ltd.</title>
-  <!-- Swap stylesheet to modern.css -->
   <link rel="stylesheet" href="modern.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script>
-    function toggleSidebar(){
-      document.getElementById('sidebar').classList.toggle('show');
-      document.getElementById('overlay').classList.toggle('show');
-    }
-    function closeSidebar(){
-      document.getElementById('sidebar').classList.remove('show');
-      document.getElementById('overlay').classList.remove('show');
-    }
+    function toggleSidebar(){document.getElementById('sidebar').classList.toggle('show');document.getElementById('overlay').classList.toggle('show');}
+    function closeSidebar(){document.getElementById('sidebar').classList.remove('show');document.getElementById('overlay').classList.remove('show');}
   </script>
 </head>
 <body>
@@ -39,10 +32,10 @@
       <li><a href="contact.html" onclick="closeSidebar()">Contact</a></li>
     </ul>
     <div class="social-icons">
-      <a href="https://www.instagram.com/r_s_stucco/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.facebook.com/rs.stucco/reels/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://www.tiktok.com/@r_s_stucco" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-      <a href="https://wa.me/18683520450" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.instagram.com/r_s_stucco/"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/rs.stucco/reels/"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.tiktok.com/@r_s_stucco"><i class="fab fa-tiktok"></i></a>
+      <a href="https://wa.me/18683520450"><i class="fab fa-whatsapp"></i></a>
     </div>
   </aside>
   <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
@@ -71,7 +64,7 @@
 
     <section class="services-highlight">
       <h2>Our Core Services</h2>
-      <p>We specialize in delivering high-quality construction, stucco finishes, durable roofing, and reliable maintenance solutions - tailored to meet the needs of residential, commercial, and educational spaces.</p>
+      <p>We specialize in delivering high-quality construction, stucco finishes, durable roofing, and reliable maintenance solutions.</p>
       <div class="services-grid">
         <div class="service-icon"><i class="fas fa-hammer"></i><p>Construction</p></div>
         <div class="service-icon"><i class="fas fa-paint-roller"></i><p>Stucco</p></div>
@@ -82,57 +75,34 @@
 
     <section>
       <h2>Trusted Expertise</h2>
-      <p>We have earned repeat and referral business by consistently delivering projects across residential, commercial, and educational spaces with quality, timeliness, and attention to detail.</p>
+      <p>We have earned repeat and referral business by consistently delivering projects with quality, timeliness, and attention to detail.</p>
     </section>
   </main>
 
   <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <div class="footer-block">
-        <h3>Contact us</h3>
-        <div class="footer-contact">
-          <p><strong>Phone:</strong> 1-868-352-0450</p>
-          <p><strong>Email:</strong> <a href="mailto:rsaliconstruction@outlook.com">rsaliconstruction@outlook.com</a></p>
-        </div>
-      </div>
-      <div class="footer-block">
-        <h3>Address</h3>
-        <div class="footer-contact">
-          <p>#53B Sookoo Trace, Cedar Hill Road</p>
-          <p>Claxton Bay</p>
-        </div>
-      </div>
-      <div class="footer-block">
-        <h3>Hours</h3>
-        <div class="footer-hours">
-          <p>Mon - Fri: 8:00 AM - 4:00 PM</p>
-          <p>Sat: 8:00 AM - 1:00 PM</p>
-        </div>
-      </div>
+      <div class="footer-block"><h3>Contact us</h3><p><strong>Phone:</strong> 1-868-352-0450<br><strong>Email:</strong> <a href="mailto:rsaliconstruction@outlook.com">rsaliconstruction@outlook.com</a></p></div>
+      <div class="footer-block"><h3>Address</h3><p>#53B Sookoo Trace, Cedar Hill Road<br>Claxton Bay</p></div>
+      <div class="footer-block"><h3>Hours</h3><p>Mon - Fri: 8:00 AM - 4:00 PM<br>Sat: 8:00 AM - 1:00 PM</p></div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 R&S Ali Construction Ltd. All rights reserved.</p>
-    </div>
+    <div class="footer-bottom"><p>&copy; 2025 R&S Ali Construction Ltd. All rights reserved.</p></div>
   </footer>
 
   <!-- Scroll Animation Script -->
   <script>
     const sections = document.querySelectorAll("main section, .services-highlight");
-
     const revealOnScroll = () => {
       const triggerBottom = window.innerHeight * 0.85;
       sections.forEach((section, index) => {
         const boxTop = section.getBoundingClientRect().top;
         if (boxTop < triggerBottom) {
-          // staggered delay
           setTimeout(() => section.classList.add("show"), index * 150);
         } else {
           section.classList.remove("show");
         }
       });
     };
-
     window.addEventListener("scroll", revealOnScroll);
     window.addEventListener("load", revealOnScroll);
   </script>
