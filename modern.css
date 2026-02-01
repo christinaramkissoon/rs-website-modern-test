@@ -46,4 +46,156 @@ a:hover { text-decoration: underline; }
   padding: 0.75rem 1.25rem;
 }
 .topbar img { height: 44px; width: auto; }
-.hamburger { font-size
+.hamburger { font-size: 1.6rem; cursor: pointer; }
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  left: -280px;
+  top: 0;
+  width: 280px;
+  height: 100vh;
+  background: rgba(17,17,17,0.85);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  padding: 1rem 1rem 2rem;
+  transition: left 0.3s ease;
+  z-index: 1100;
+  overflow-y: auto;
+}
+.sidebar.show { left: 0; }
+
+/* Hero */
+.hero {
+  position: relative;
+  min-height: 50vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 4rem 1rem;
+  background: url('images/project-house1.jpeg') center/cover no-repeat fixed;
+  animation: fadeInHero 1.2s ease forwards;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.35));
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  letter-spacing: 0.02em;
+  margin: 0 0 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+.hero p, .hero .quote-btn { position: relative; z-index: 1; }
+
+@keyframes fadeInHero {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Cards */
+.project-card, .product-card, .service-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover, .product-card:hover, .service-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.15);
+}
+.project-card img, .product-card img, .service-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.project-card:hover img, .product-card:hover img, .service-card:hover img {
+  transform: scale(1.05);
+}
+.project-meta, .product-meta, .service-meta {
+  padding: 0.9rem 1rem;
+}
+.project-meta h3, .product-meta h3, .service-meta h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+}
+.project-meta p, .product-meta p, .service-meta p {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Grids */
+.projects-grid, .products-grid, .services-grid {
+  display: grid;
+  gap: 1rem;
+}
+.projects-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.products-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.services-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+
+/* Footer */
+.site-footer {
+  margin-top: 3rem;
+  background: #111;
+  color: #ddd;
+}
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.social-icons a {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+.social-icons a:hover {
+  background: #B8860B;
+  box-shadow: 0 0 12px #FFD700;
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.12);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+/* Scroll reveal animation */
+main section, .services-highlight, .project-card, .product-card, .service-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+main section.show, .services-highlight.show,
+.project-card.show, .product-card.show, .service-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .footer-inner { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .footer-inner { grid-template-columns: 1fr; }
+  .hero { min-height: 40vh; padding: 2.5rem 1rem; }
+  .project-card img, .product-card img, .service-card img { height: 180px; }
+  .sidebar { width: 86vw; left: -86vw; }
+}
