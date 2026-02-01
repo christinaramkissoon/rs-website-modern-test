@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Projects - R&S Ali Construction Ltd.</title>
+  <title>Products - R&S Ali Construction Ltd.</title>
   <link rel="stylesheet" href="modern.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script>
@@ -30,8 +30,8 @@
     <h2>Navigation</h2>
     <ul class="nav-links">
       <li><a href="index.html" onclick="closeSidebar()">Home</a></li>
-      <li><a href="products.html" onclick="closeSidebar()">Products</a></li>
-      <li><a href="projects.html" class="active" onclick="closeSidebar()">Projects</a></li>
+      <li><a href="products.html" class="active" onclick="closeSidebar()">Products</a></li>
+      <li><a href="projects.html" onclick="closeSidebar()">Projects</a></li>
       <li><a href="services.html" onclick="closeSidebar()">Services</a></li>
       <li><a href="about.html" onclick="closeSidebar()">About Us</a></li>
       <li><a href="contact.html" onclick="closeSidebar()">Contact</a></li>
@@ -47,19 +47,25 @@
 
   <!-- Hero -->
   <section class="hero">
-    <h1>Our Projects</h1>
-    <p>Showcasing our craftsmanship across residential, commercial, and educational spaces.</p>
+    <h1>Our Products</h1>
+    <p>Explore our range of wall finishes, coatings, and construction materials.</p>
     <a href="mailto:rsaliconstruction@outlook.com" class="quote-btn">Request a Quote</a>
   </section>
 
   <!-- Main Content -->
   <main>
     <section>
-      <h2><i class="fas fa-building"></i> Featured Projects</h2>
-      <div class="projects-grid">
-        <article class="project-card"><img src="images/project-house1.jpeg" alt="Residential Project"><div class="project-meta"><h3>Residential Excellence</h3><p>Modern home construction with stucco finishes and durable roofing.</p></div></article>
-        <article class="project-card"><img src="images/project-school.jpeg" alt="Educational Project"><div class="project-meta"><h3>Educational Facility</h3><p>High-quality construction for schools with safety and durability in mind.</p></div></article>
-        <article class="project-card"><img src="images/project-commercial.jpeg" alt="Commercial Project"><div class="project-meta"><h3>Commercial Development</h3><p>Delivering functional and aesthetic spaces for businesses.</p></div></article>
+      <h2><i class="fas fa-paint-roller"></i> Wall Finishes & Materials</h2>
+      <div class="products-grid">
+        <!-- Example product card -->
+        <article class="product-card" tabindex="0">
+          <img src="images/sto-decocoat.jpg" alt="Decorative Coating">
+          <div class="product-meta">
+            <h3>Decorative Coating</h3>
+            <p>Acrylic decorative coating with fine aggregate for interior/exterior walls.</p>
+          </div>
+        </article>
+        <!-- Repeat for all products -->
       </div>
     </section>
   </main>
@@ -96,14 +102,14 @@
 
   <!-- Scroll Animation Script -->
   <script>
-    const sections = document.querySelectorAll("main section, .project-card");
+    const sections = document.querySelectorAll("main section, .product-card");
 
     const revealOnScroll = () => {
       const triggerBottom = window.innerHeight * 0.85;
       sections.forEach((section, index) => {
         const boxTop = section.getBoundingClientRect().top;
         if (boxTop < triggerBottom) {
-          setTimeout(() => section.classList.add("show"), index * 150);
+          setTimeout(() => section.classList.add("show"), index * 120);
         } else {
           section.classList.remove("show");
         }
