@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact - R&S Ali Construction Ltd.</title>
+  <link rel="stylesheet" href="modern.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script>
+    function toggleSidebar(){
+      document.getElementById('sidebar').classList.toggle('show');
+      document.getElementById('overlay').classList.toggle('show');
+    }
+    function closeSidebar(){
+      document.getElementById('sidebar').classList.remove('show');
+      document.getElementById('overlay').classList.remove('show');
+    }
+  </script>
+</head>
+<body>
+  <!-- Topbar -->
+  <header class="topbar">
+    <img src="images/rs-logo-new.png" alt="Logo" />
+    <div class="hamburger" onclick="toggleSidebar()">☰</div>
+  </header>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <img src="images/rs-logo-new.png" class="logo" alt="Logo" />
+    <h2>Navigation</h2>
+    <ul class="nav-links">
+      <li><a href="index.html" onclick="closeSidebar()">Home</a></li>
+      <li><a href="products.html" onclick="closeSidebar()">Products</a></li>
+      <li><a href="projects.html" onclick="closeSidebar()">Projects</a></li>
+      <li><a href="services.html" onclick="closeSidebar()">Services</a></li>
+      <li><a href="about.html" onclick="closeSidebar()">About Us</a></li>
+      <li><a href="contact.html" class="active" onclick="closeSidebar()">Contact</a></li>
+    </ul>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/r_s_stucco/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/rs.stucco/reels/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.tiktok.com/@r_s_stucco" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+      <a href="https://wa.me/18683520450" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </aside>
+  <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Contact Us</h1>
+    <p>Let's chat! We’re here to answer your questions.</p>
+    <a href="mailto:rsaliconstruction@outlook.com" class="quote-btn">Request a Quote</a>
+  </section>
+
+  <!-- Content -->
+  <main>
+    <section>
+      <h2><i class="fas fa-phone"></i> Get in Touch</h2>
+      <p>Reach out to us via phone, email, or visit our office.</p>
+      <div class="footer-contact">
+        <p><strong>Phone:</strong> 1-868-352-0450</p>
+        <p><strong>Email:</strong> <a href="mailto:rsaliconstruction@outlook.com">rsaliconstruction@outlook.com</a></p>
+        <p><strong>Address:</strong> #53B Sookoo Trace, Cedar Hill Road, Claxton Bay</p>
+        <p><strong>Hours:</strong> Mon - Fri: 8:00 AM - 4:00 PM | Sat: 8:00 AM - 1:00 PM</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-block">
+        <h3>Contact us</h3>
+        <div class="footer-contact">
+          <p><strong>Phone:</strong> 1-868-352-0450</p>
+          <p><strong>Email:</strong> <a href="mailto:rsaliconstruction@outlook.com">rsaliconstruction@outlook.com</a></p>
+        </div>
+      </div>
+      <div class="footer-block">
+        <h3>Address</h3>
+        <div class="footer-contact">
+          <p>#53B Sookoo Trace, Cedar Hill Road</p>
+          <p>Claxton Bay</p>
+        </div>
+      </div>
+      <div class="footer-block">
+        <h3>Hours</h3>
+        <div class="footer-hours">
+          <p>Mon - Fri: 8:00 AM - 4:00 PM</p>
+          <p>Sat: 8:00 AM - 1:00 PM</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 R&S Ali Construction Ltd. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    const sections = document.querySelectorAll("main section");
+
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach((section, index) => {
+        const boxTop = section.getBoundingClientRect().top;
+        if (boxTop < triggerBottom) {
+          setTimeout(() => section.classList.add("show"), index * 150);
+        } else {
+          section.classList.remove("show");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", revealOnScroll);
+  </script>
+</body>
+</html>
